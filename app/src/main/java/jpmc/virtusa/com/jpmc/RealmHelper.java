@@ -18,27 +18,24 @@ public class RealmHelper {
         this.realm = realm;
     }
 
+    public void save(final Transaction transaction)
+    {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Transaction tr=realm.copyToRealm(transaction);
+            }
+        });
+    }
 
-    public ArrayList<Transaction> retrieve(){
+    public void saveAll() {
 
-        ArrayList<Transaction> arrayListTransactions =
-                new ArrayList<>();
-        /*RealmResults<Transaction> transactionRealmResults =
-                realm.where(Transaction.class).findAll();
-
-        for (Transaction transaction :
-                transactionRealmResults) {
-
-
-            arrayListTransactions.add(transaction);
-        }
-*/
         Transaction transaction1 =
                 new Transaction("01/01/2018", "WAFLE HOUSE ATLANTA GA", "$5");
         Transaction transaction2 =
                 new Transaction("01/20/2018", "DOLLAR TREE SMYRNA GA", "$30");
         Transaction transaction3 =
-                new Transaction("2/01/2018", "COSTCO WHSE #0631 ATLANTA GA ", "$50");
+                new Transaction("2/01/2018", "COSTCO WHSE #0631", "$50");
         Transaction transaction4 =
                 new Transaction("2/11/2018", "NETFLIX.COM", "$5");
         Transaction transaction5 =
@@ -54,19 +51,24 @@ public class RealmHelper {
         Transaction transaction10 =
                 new Transaction("4/02/2018", "UBER TRIP UZYBA ", "$5");
 
-        arrayListTransactions.add(transaction1);
-        arrayListTransactions.add(transaction2);
-        arrayListTransactions.add(transaction4);
-        arrayListTransactions.add(transaction5);
-        arrayListTransactions.add(transaction6);
-        arrayListTransactions.add(transaction7);
-        arrayListTransactions.add(transaction8);
-        arrayListTransactions.add(transaction9);
-        arrayListTransactions.add(transaction10);
-
-        return arrayListTransactions;
+        save(transaction1); save(transaction2);
+        save(transaction3); save(transaction4);
+        save(transaction5); save(transaction6);
+        save(transaction7); save(transaction8);
+        save(transaction9); save(transaction10);
     }
 
+    public ArrayList<Transaction> retrieve(){
 
+        ArrayList<Transaction> arrayListTransactions =
+                new ArrayList<>();
+        RealmResults<Transaction> transactionRealmResults =
+                realm.where(Transaction.class).findAll();
 
+        for (Transaction transaction :
+                transactionRealmResults) {
+            arrayListTransactions.add(transaction);
+        }
+        return arrayListTransactions;
+    }
 }

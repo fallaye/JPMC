@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         Realm realm = Realm.getDefaultInstance();
 
         RealmHelper helper = new RealmHelper(realm);
+        helper.saveAll();
         transactionArrayList = helper.retrieve();
 
         adapter=new MyAdapter(this, transactionArrayList);
@@ -52,12 +53,10 @@ public class HomeActivity extends AppCompatActivity {
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
-
                     }
                 })
         );
 
-        //displayTransactions();
     }
 
     private void displayTransactions() {
