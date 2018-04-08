@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'realm-android'
+
 android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "jpmc.virtusa.com.jpmc"
         minSdkVersion 23
-                                 targetSdkVersion 26
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,4 +27,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+
+
 }

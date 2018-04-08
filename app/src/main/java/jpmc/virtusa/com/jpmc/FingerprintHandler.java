@@ -10,14 +10,10 @@ import android.os.CancellationSignal;
 import android.support.v4.app.ActivityCompat;
 import android.widget.TextView;
 
-/**
- * Created by whit3hawks on 11/16/16.
- */
 public class FingerprintHandler extends FingerprintManager.AuthenticationCallback {
 
     private Context context;
 
-    // Constructor
     public FingerprintHandler(Context mContext) {
         context = mContext;
     }
