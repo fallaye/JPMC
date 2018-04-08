@@ -40,19 +40,19 @@ public class RealmHelper {
         Transaction transaction3 =
                 new Transaction("2/01/2018", "COSTCO WHSE #0631 ATLANTA GA ", "$50");
         Transaction transaction4 =
-                new Transaction("2/11/2018", "WAFLE HOUSE ATLANTA GA", "$5");
+                new Transaction("2/11/2018", "NETFLIX.COM", "$5");
         Transaction transaction5 =
                 new Transaction("2/11/2018", "WAFLE HOUSE ATLANTA GA", "$5");
         Transaction transaction6 =
-                new Transaction("3/01/2018", "WAFLE HOUSE ATLANTA GA", "$5");
+                new Transaction("3/01/2018", " PATXIS PIZZA", "$5");
         Transaction transaction7 =
-                new Transaction("3/05/2018", "WAFLE HOUSE ATLANTA GA", "$5");
+                new Transaction("3/05/2018", "ALL STAR FAST FOOD", "$5");
         Transaction transaction8 =
                 new Transaction("4/01/2018", "WAFLE HOUSE ATLANTA GA", "$5");
         Transaction transaction9 =
-                new Transaction("4/02/2018", "WAFLE HOUSE ATLANTA GA", "$5");
+                new Transaction("4/02/2018", "HAAFIZ FOOD MART", "$5");
         Transaction transaction10 =
-                new Transaction("4/02/2018", "WAFLE HOUSE ATLANTA GA", "$5");
+                new Transaction("4/02/2018", "UBER TRIP UZYBA ", "$5");
 
         arrayListTransactions.add(transaction1);
         arrayListTransactions.add(transaction2);

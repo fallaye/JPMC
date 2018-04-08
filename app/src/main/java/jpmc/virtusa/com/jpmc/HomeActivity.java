@@ -44,7 +44,9 @@ public class HomeActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                         Bundle bundle = new Bundle();
+                        bundle.putString("date", transactionArrayList.get(position).getmDate());
                         bundle.putString("desc", transactionArrayList.get(position).getmDesc());
+                        bundle.putString("amount", transactionArrayList.get(position).getmAmount());
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }
