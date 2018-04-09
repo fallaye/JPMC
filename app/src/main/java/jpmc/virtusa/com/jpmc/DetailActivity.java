@@ -2,6 +2,7 @@ package jpmc.virtusa.com.jpmc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.TransitionInflater;
 import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
@@ -26,8 +27,6 @@ public class DetailActivity extends AppCompatActivity {
         tvDate.setText("DATE:          " + mDate);
         tvDesc.setText("DESCRIPTION:   " + mDesc);
         tvAmount.setText("AMOUNT:      " + mAmount);
-
-
 
     }
 }

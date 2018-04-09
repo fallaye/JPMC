@@ -2,17 +2,35 @@ package jpmc.virtusa.com.jpmc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
+import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import android.transition.ChangeBounds;
+import android.transition.ChangeImageTransform;
+import android.transition.Fade;
+import android.transition.TransitionManager;
+import android.transition.TransitionSet;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.transitionseverywhere.ArcMotion;
+import com.transitionseverywhere.Explode;
+import com.transitionseverywhere.Rotate;
+import com.transitionseverywhere.Transition;
+import com.transitionseverywhere.extra.Scale;
 
 import java.util.ArrayList;
 
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 public class HomeActivity extends AppCompatActivity {
     Context context;
@@ -56,6 +74,26 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 })
         );
+
+        final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.transitions_container);
+        final TextView text = (TextView) transitionsContainer.findViewById(R.id.text);
+        final Button button = (Button) transitionsContainer.findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            boolean visible;
+
+            @Override
+            public void onClick(View v) {
+
+                TransitionManager.beginDelayedTransition(transitionsContainer);
+                visible = !visible;
+                text.setVisibility(visible ? View.VISIBLE : View.GONE);
+
+
+            }
+
+        });
 
     }
 
