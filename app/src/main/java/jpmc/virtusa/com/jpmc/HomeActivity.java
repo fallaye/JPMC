@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
                         bundle.putString("amount", transactionArrayList.get(position).getmAmount());
                         intent.putExtras(bundle);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.rotate_out,R.anim.rotate_in);
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
